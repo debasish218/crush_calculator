@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Crush Calculator</title>
+</head>
+<body>
+    <h1>Secret crush calculator</h1>
+    <h2>You can know how much your crush have crush on you</h2>
+    <form action="{% url 'submit_form' %}" method = 'POST'>
+        {% csrf_token %}
+        <label for="name1">Your Name</label>
+        <input type="text" name="name1" id="name1">
+        <label for="name2">Your Crush Name</label>
+        <input type="text" name="name2" id="name2">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
